@@ -32,7 +32,7 @@ def list_decades():
 
 COUNTRY_LIST = list_countries()
 DECADE_LIST = list_decades()
-DEFAULT_COUNTRY = "Afghanistan"
+DEFAULT_COUNTRY = "United States"
 START_YEAR = 2010
 END_YEAR = 2020
 

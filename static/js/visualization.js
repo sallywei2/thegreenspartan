@@ -29,7 +29,12 @@ function visualization(dataset){
   				intersect: false,
   				axis: 'xy',
   				mode: 'nearest',
-  			}
+  			},
+			scales: {
+      	y: {
+        	beginAtZero: true
+      	}
+    	}
     },
     plugins: {
       title: {
