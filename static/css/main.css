@@ -1,0 +1,46 @@
+body, h1 {
+	margin:  0;
+	padding: 0;
+}
+nav {
+	border-bottom: 2px solid seagreen;
+	padding: 1em 0 1em 0;
+}
+h1, h2 { padding-left: 1em; }
+
+#countrySelect {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	height: 10em;
+	width: 100%;
+	overflow: scroll;
+	align-content: stretch;
+	text-align: center;
+}
+#countrySelect .country-button {
+	display: inline-block;
+}
+
+#countrySelect .country-button form button {
+	background-color: inherit;
+	border: 1px solid ghostwhite;
+	width: 100%;
+}
+#countrySelect .country-button form button:hover {
+	background-color: rgba(0,0,0,0.10);
+}
+#countrySelect .country-button.selected form button {
+	background-color: mintcream;
+}
+#countrySelect .country-button.selected form button:hover {
+	background-color: #c7ebd9; /* mint */
+}
+
+
+#temperatureChart {
+	height: 300px;
+	width: 300px;
+	background-color:  cornflower;
+}

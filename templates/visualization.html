@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+
+{% block countrySelect %}
+	{% for c in countries %}
+		<div class='country-button {% if country|string() == c|string() %}selected{% endif %}'>
+			<form method="post">
+				<button type="submit" name='country' value ="{{ c }}">{{ c }}</button>
+			</form>
+		</div>
+	{% endfor %}
+{% endblock %}

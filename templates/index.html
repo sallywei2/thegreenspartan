@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title>TheGreenSpartan</title>
+	<link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+</head>
+<body>
+	<nav>
+		<h1>The Green Spartan</h1>
+	</nav>
+
+	<main>
+		<div id="countrySelect">
+			{% block countrySelect %} {% endblock %}
+		</div>
+
+		<div class="visualization">
+			<h2>{{ country }}</h2>
+			<canvas id="temperatureChart"></canvas>
+			<div id="temperatureWorldMap"></div>
+		</div>
+	</main>
+
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+	<script>
+		const visualizationUrl = "{{ url_for('Visualization') }}";
+	</script>
+	<script src="{{ url_for('static', filename='js/visualization.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</body>
+</html>
