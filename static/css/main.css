@@ -1,12 +1,32 @@
+html {
+	font-family:  "Exo", sans-serif;
+}
 body, h1 {
 	margin:  0;
 	padding: 0;
 }
 nav {
+	background-color: #45544b;
 	border-bottom: 2px solid seagreen;
+	color:  white;
 	padding: 1em 0 1em 0;
 }
 h1, h2 { padding-left: 1em; }
+
+#countryNav{
+	padding-left: 1em;
+	text-align: center;
+	background-color: rgba(0,0,0,0.05);
+	border-bottom: grey;
+}
+#countryNav a {
+	color: green;
+	text-decoration: none;
+}
+#countryNav a span{
+	padding: 0 1em 0 1em;
+}
+
 
 #countrySelect {
 	display: flex;
@@ -19,6 +39,16 @@ h1, h2 { padding-left: 1em; }
 	align-content: stretch;
 	text-align: center;
 }
+#countrySelect .alphabet-header {
+	position: relative;
+	color: green;
+	font-size: 20px;
+	font-weight: bold;
+}
+#countrySelect .alphabet-header .alphabet-dest {
+	position: absolute;
+	top: -12em;
+}
 #countrySelect .country-button {
 	display: inline-block;
 }
@@ -27,14 +57,13 @@ h1, h2 { padding-left: 1em; }
 	background-color: inherit;
 	border: 1px solid ghostwhite;
 	width: 100%;
+	cursor: pointer;
 }
-#countrySelect .country-button form button:hover {
+#countrySelect .country-button form button:hover, 
+#countrySelect .country-button.selected form button:hover {
 	background-color: rgba(0,0,0,0.10);
 }
 #countrySelect .country-button.selected form button {
-	background-color: mintcream;
-}
-#countrySelect .country-button.selected form button:hover {
 	background-color: #c7ebd9; /* mint */
 }
 

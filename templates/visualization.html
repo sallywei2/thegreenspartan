@@ -1,11 +1,20 @@
 {% extends 'index.html' %}
 
 {% block countrySelect %}
+	{% set ns = namespace(letter='') %}
 	{% for c in countries %}
+		{% if ns.letter|string() != c[:1]|string() %}
+			{% set ns.letter = c[:1] %}
+			<div class="alphabet-header">
+				{{ ns.letter }}
+				<div class="alphabet-dest" id="{{ ns.letter }}"></div>
+			</div>
+		{% endif %}
 		<div class='country-button {% if country|string() == c|string() %}selected{% endif %}'>
 			<form method="post">
 				<button type="submit" name='country' value ="{{ c }}">{{ c }}</button>
 			</form>
 		</div>
 	{% endfor %}
+</div>
 {% endblock %}
