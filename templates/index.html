@@ -10,7 +10,7 @@
 </head>
 <body>
 	<nav>
-		<h1>The Green Spartan</h1>
+		<a href="/"><h1>The Green Spartan</h1></a>
 	</nav>
 
 	<main>
@@ -23,6 +23,16 @@
 			{% block countrySelect %} {% endblock %}
 		</div>
 
+		<div id="decadeSelect">
+			{% for item in decades %}
+				{% set item = item|int %}
+				<form action="visualization" method="post">
+					<input type="hidden" name='startyear' value='{{ item }}'></span>
+					<input type="hidden" name='endyear' value='{{ item+10 }}'></span>
+					<button type="submit" name="country" value="{{ country }}">{{ item }} - {{ item+10 }}</button>
+				</form>
+			{% endfor %}
+		</div>
 		<div class="visualization">
 			<h2>{{ country }}</h2>
 			<canvas id="temperatureChart"></canvas>
@@ -30,12 +40,13 @@
 		</div>
 	</main>
 
-	<script src="https://d3js.org/d3.v5.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
-	<script>
-		const visualizationUrl = "{{ url_for('Visualization') }}";
-	</script>
 	<script src="{{ url_for('static', filename='js/visualization.js') }}"></script>
-	<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+	<script>
+		{% if data is not none %}
+			var dataset = JSON.parse({{ data|tojson }})
+			visualization(dataset);
+		{% endif %}
+	</script>
 </body>
 </html>

@@ -7,14 +7,26 @@ body, h1 {
 }
 nav {
 	background-color: #45544b;
-	border-bottom: 2px solid seagreen;
 	color:  white;
 	padding: 1em 0 1em 0;
 }
-h1, h2 { padding-left: 1em; }
+
+nav a {
+	color: white;
+	text-decoration: none;
+}
+h1 {
+	padding-left: 1em;
+	display: inline-block;
+}
+h2 {
+	padding-left: 1em;
+	text-align: center;
+	color: #45544b;
+}
 
 #countryNav{
-	padding-left: 1em;
+	padding: 0.5em 1em 0.5em 1em;
 	text-align: center;
 	background-color: rgba(0,0,0,0.05);
 	border-bottom: grey;
@@ -26,7 +38,6 @@ h1, h2 { padding-left: 1em; }
 #countryNav a span{
 	padding: 0 1em 0 1em;
 }
-
 
 #countrySelect {
 	display: flex;
@@ -67,6 +78,9 @@ h1, h2 { padding-left: 1em; }
 	background-color: #c7ebd9; /* mint */
 }
 
+#decadeSelect form {
+    display: inline-block;
+}
 
 #temperatureChart {
 	height: 300px;

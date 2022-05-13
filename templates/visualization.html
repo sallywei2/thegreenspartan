@@ -11,7 +11,9 @@
 			</div>
 		{% endif %}
 		<div class='country-button {% if country|string() == c|string() %}selected{% endif %}'>
-			<form method="post">
+			<form action="visualization" method="post">
+				<input type="hidden" name='startyear' value='{{ startyear }}'>
+				<input type="hidden" name='endyear' value='{{ endyear }}'>
 				<button type="submit" name='country' value ="{{ c }}">{{ c }}</button>
 			</form>
 		</div>
